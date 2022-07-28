@@ -1,0 +1,63 @@
+#canvas {
+	background-color: lightgrey;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 60%;
+}
+.title-bar{
+	margin-top: -10px;
+}
+.tool-menu{
+	width: 100%;
+	background-color: grey;
+	border-bottom: 1px solid;
+	word-spacing: 10px;
+}
+.directory-tools{
+	width: 100%;
+	height: 40px;
+	background-color: grey;
+	border-bottom: 1px solid;
+	word-spacing: 5px;
+}
+.directory-tool{
+	width: 100px;
+	height: 100%;
+	background-color: darkgrey;
+	float: left;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.directory-files{
+position:fixed;
+	z-index: -1;
+top:0;
+left:0;
+	width: 20%;
+	height: 100%;
+	background-color: grey;
+}
+.directory-files-position{
+	position: relative;
+	height: 50%;
+	width: 100%;
+	top: 20%;
+	background-color: red;
+}
+.directory-file{
+	margin-top: 20px;
+	width: 80%;
+	height: 130px;
+	background-color: lightblue;
+}
+body{
+	/*background-color: black;*/
+	background-image: url("../img/winxp1.png");
+	no-repeat center fixed;
+	background-size: cover;
+};
