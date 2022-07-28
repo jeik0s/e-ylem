@@ -17,9 +17,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Deploy using ssh
-      uses: github/ssh-action@master
+      uses: jeik0s/e-ylem@master
       with:
+        Default: ${{ github.repository }}
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
