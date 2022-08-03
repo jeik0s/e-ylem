@@ -11,7 +11,7 @@ jobs:
             cd /tmp
             ls -a
           host: ${{ secrets.HOST }}
-          user: root
+          user: github
           key: ${{ secrets.PRIVATE_KEY}}
 
 
