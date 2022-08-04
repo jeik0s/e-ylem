@@ -19,7 +19,6 @@ jobs:
           SSH_KEY: ${{ secrets.PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.HOST }}
       - name: Download latest changes
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
         run: ssh myServer 'cd /var/lib/docker-workspaces/http80/e-ylem && git fetch && git reset --hard origin/master'
 
 
