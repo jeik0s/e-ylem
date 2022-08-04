@@ -17,13 +17,13 @@ jobs:
             StrictHostKeyChecking no
           END
         env:
-          SSH_USER: ${{ secrets.STAGING_SSH_USER }}
-          SSH_KEY: ${{ secrets.STAGING_SSH_KEY }}
-          SSH_HOST: ${{ secrets.STAGING_SSH_HOST }}
+          SSH_USER: ${{ secrets.USERNAME }}
+          SSH_KEY: ${{ secrets.PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.HOST }}
       - name: ls /tmp 
         run: |
-        cd /tmp
-        ls -a
+          cd /tmp
+          ls -a
 
 
 
