@@ -9,24 +9,30 @@ jobs:
           mkdir -p ~/.ssh/
           echo "$SSH_KEY" > ~/.ssh/staging.key
           chmod 600 ~/.ssh/staging.key
-          cat >>~/.ssh/config <<END
-          Host staging
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/staging.key
-            StrictHostKeyChecking no
-          END
+          echo "Host myServer" >> ~/.ssh/config
+          echo "  HostName $SSH_HOST" >> ~/.ssh/config
+          echo "  User $SSH_USER" >> ~/.ssh/config
+          echo "  IdentityFile ~/.ssh/staging.key" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
         env:
           SSH_USER: ${{ secrets.USERNAME }}
           SSH_KEY: ${{ secrets.PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.HOST }}
-      - name: ls /tmp 
-        run: |
-          cd /tmp
-          ls -a
+      - name: Download latest changes
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+        run: ssh myServer 'cd /var/lib/docker-workspaces/http80/e-ylem && git fetch && git reset --hard origin/master'
+
 
 
 
 
 # https://zellwk.com/blog/github-actions-deploy/
 # https://zellwk.com/blog/understanding-github-actions/
+
+          # cat >>~/.ssh/config <<END
+          # Host staging
+          #   HostName $SSH_HOST
+          #   User $SSH_USER
+          #   IdentityFile ~/.ssh/staging.key
+          #   StrictHostKeyChecking no
+          # END test
