@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/xp.css">
 		<title></title>
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 	<body>
 		<div id="canvas">
@@ -15,17 +16,24 @@
 					<button aria-label="Close"></button>
 				</div>
 			</div>
-			<div class="tool-menu"> Files Edit View Favorites Tools Help</div>
-			<div class="directory-tools">
-				<div class="directory-tool"><</div>
-				<div class="directory-tool">></div>
-				<div class="directory-tool">^</div>
-				<div class="directory-tool">Search</div>
-				<div class="directory-tool">Folders</div>
-				<div class="directory-tool">Icons</div>
+			<div class="directory-options-bar"> 
+				<div class="directory-option">Files</div>
+				<div class="directory-option">Edit</div>
+				<div class="directory-option">View</div>
+				<div class="directory-option">Favorites</div>
+				<div class="directory-option">Tools</div>
+				<div class="directory-option">Help</div>
+			</div>
+			<div class="directory-tools-bar">
+				<div class="directory-tool"><i class="fa-solid fa-circle-left"></i></div>
+				<div class="directory-tool"><i class="fa-solid fa-circle-right"></i></div>
+				<div class="directory-tool"><i class="fa-solid fa-folder-plus"></i></i></i></div>
+				<div class="directory-tool"><i class="fa-solid fa-magnifying-glass"></i></div>
+				<div class="directory-tool"><i class="fa-solid fa-folder-open"></i></div>
+				<div class="directory-tool"><i class="fa-solid fa-sitemap"></i></i></div>
 			</div>
 			<div class="directory-files">
-				<div class="directory-files-position">
+<!-- 				<div class="directory-files-position">
 					<div class="directory-file">
 						<div class="directory-file-title">File and Folder Tasks</div>
 						<div class="directory-file-options"></div>
@@ -34,7 +42,7 @@
 						<div class="directory-file-title">Other Places</div>
 						<div class="directory-file-options"></div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		 <script src="js/script.js"></script> 
